@@ -40,6 +40,10 @@ export const Nav = styled.div`
   @media screen and (max-width: 1440px) {
     padding: 0.5rem calc((100vw - 1300px) / 2);
   }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 export const Bars = styled(FaBars)`
