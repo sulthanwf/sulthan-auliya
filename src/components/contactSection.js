@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Button } from "./button"
 import { Title } from "./title"
 import BackgroundImage from "gatsby-background-image"
-import Footer from "./footer"
+// import Footer from "./footer"
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -45,11 +45,11 @@ const Contact = () => {
             <textarea name="message" placeholder="Send your message" />
           </ContactForm>
           <BtnBorder>
-            <Button>Send</Button>
+            <Button to="/send">Send</Button>
           </BtnBorder>
         </ContactContent>
       </ContactContainer>
-      <Footer />
+      {/* <Footer /> */}
     </BackgroundImage>
   )
 }

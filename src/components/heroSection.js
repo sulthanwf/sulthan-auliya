@@ -28,9 +28,6 @@ const Hero = () => {
   const codeBg = data.Code.childImageSharp.fluid
 
   const [heroBg, setHeroBg] = useState(aucklandBg)
-  // const handleToggle = () => {
-  //   setHeroBg(!heroBg)
-  // }
 
   return (
     <BackgroundImage

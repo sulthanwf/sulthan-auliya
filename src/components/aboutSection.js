@@ -19,7 +19,7 @@ const About = () => {
           my interest and photography is my hobby.
         </ThirdLine>
         <BtnBorder>
-          <Button>Get to know me more</Button>
+          <Button to="/about">Get to know me more</Button>
         </BtnBorder>
       </AboutContent>
     </AboutContainer>

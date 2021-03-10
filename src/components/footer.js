@@ -38,10 +38,6 @@ export const FooterContainer = styled.div`
   left: 25vw;
   z-index: 10;
   color: white;
-
-  @media screen and (max-width: 1440px) {
-    height: 100px;
-  }
 `
 
 export const FooterContent = styled.div`

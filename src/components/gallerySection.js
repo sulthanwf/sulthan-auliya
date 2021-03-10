@@ -42,7 +42,7 @@ const Gallery = () => {
             best way to learn for me is "just do it" -Nike
           </ThirdLine>
           <BtnBorder>
-            <Button>Take a look at my Gallery</Button>
+            <Button to="/gallery">Take a look at my Gallery</Button>
           </BtnBorder>
         </GalleryContent>
       </GalleryContainer>
