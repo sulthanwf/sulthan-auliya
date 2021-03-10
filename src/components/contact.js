@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Button } from "./button"
 import { Title } from "./title"
 import BackgroundImage from "gatsby-background-image"
+import Footer from "./footer"
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -48,6 +49,7 @@ const Contact = () => {
           </BtnBorder>
         </ContactContent>
       </ContactContainer>
+      <Footer />
     </BackgroundImage>
   )
 }
@@ -57,17 +59,43 @@ export default Contact
 export const ContactContainer = styled.div`
   background: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
   padding: 0.5rem calc((100vw - 690px) / 2);
   position: relative;
   color: #fff;
+
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 10rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 5rem;
+  }
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 100%,
+        rgba(0, 0, 0, 0.2) 0%
+      ),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+  }
 `
 
 export const ContactContent = styled.div`
   padding: 0 1rem;
   width: 100%;
+  z-index: 10;
 `
 
 export const ContactTitle = styled.div`
@@ -97,7 +125,7 @@ export const ContactForm = styled.div`
 
   textarea {
     margin: 10px 0;
-    height: 350px;
+    height: clamp(200px, 33vh, 350px);
     border: none;
     border-radius: 0 0 10px 10px;
     overflow: hidden;

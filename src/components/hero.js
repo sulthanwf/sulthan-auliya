@@ -7,14 +7,14 @@ import BackgroundImage from "gatsby-background-image"
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      Auckland: file(relativePath: { eq: "home-bg.jpg" }) {
+      Auckland: file(relativePath: { eq: "home1-bg.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      Code: file(relativePath: { eq: "code-bg.jpg" }) {
+      Code: file(relativePath: { eq: "home2-bg.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
