@@ -1,42 +1,83 @@
 import * as React from "react"
-import PropTypes from "prop-types"
+import styled from "styled-components"
+import { menuData } from "../data/MenuData"
+import { FaBars } from "react-icons/fa"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  return (
+    <Nav>
+      <Bars />
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+      <NavLink to="/">
+        <NavLogo>Sulthan Auliya</NavLogo>
+      </NavLink>
 
-Header.defaultProps = {
-  siteTitle: ``,
+      <NavMenu>
+        {menuData.map((item, index) => (
+          <NavLink to={item.link} key={index}>
+            {item.title}
+          </NavLink>
+        ))}
+      </NavMenu>
+    </Nav>
+  )
 }
 
 export default Header
+
+export const Nav = styled.div`
+  background: transparent;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1720px) / 2);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  @media screen and (max-width: 1440px) {
+    padding: 0.5rem calc((100vw - 1300px) / 2);
+  }
+`
+
+export const Bars = styled(FaBars)`
+  display: none;
+  color: #fff;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`
+
+export const NavLink = styled(Link)`
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+`
+
+export const NavLogo = styled.div`
+  font-size: 2rem;
+  font-weight: 600;
+`
+
+export const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
