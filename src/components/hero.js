@@ -14,7 +14,7 @@ const Hero = () => {
           }
         }
       }
-      Code: file(relativePath: { eq: "code.jpg" }) {
+      Code: file(relativePath: { eq: "code-bg.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -66,7 +66,7 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   padding: 0 1rem;
   position: relative;
   color: #fff;
