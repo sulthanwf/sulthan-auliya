@@ -9,14 +9,14 @@ const Hero = () => {
     query {
       Auckland: file(relativePath: { eq: "home1-bg.jpg" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 1920) {
+          fluid(quality: 80, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       Code: file(relativePath: { eq: "home2-bg.jpg" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 1920) {
+          fluid(quality: 80, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
