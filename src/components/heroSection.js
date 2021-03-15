@@ -36,6 +36,10 @@ const Hero = () => {
       fluid={heroBg}
       css={`
         height: 100vh;
+        transition: all 0.2s ease-in-out;
+        ::before {
+          background: rgba(0, 0, 0, 0);
+        }
       `}
     >
       <HeroContainer>
