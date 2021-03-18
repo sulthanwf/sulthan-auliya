@@ -33,9 +33,9 @@ export const FooterContainer = styled.div`
   width: 50vw;
   height: 200px;
   border-radius: 10px 10px 0 0;
-  position: absolute;
-  bottom: 0;
-  left: 25vw;
+  position: relative;
+  bottom: 200px;
+  left: 25%;
   z-index: 10;
   color: white;
 `
@@ -50,6 +50,7 @@ export const FSection1 = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+  width: max-content;
 `
 export const FS1FirstLine = styled.div`
   font-size: 1rem;
@@ -70,7 +71,6 @@ export const FS1SecondLine = styled.div`
 export const FS1SThirdLine = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 0 3.5rem 0 0;
   font-size: 1rem;
   font-weight: 500;
 
