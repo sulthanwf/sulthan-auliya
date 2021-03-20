@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
-import { Link } from "gatsby"
+import { SocMedLink } from "./socialMediaLinks"
 
 const CornerLinks = () => {
   return (
@@ -43,17 +43,6 @@ export const CornerLinksContainer = styled.div`
 
   @media screen and (max-width: 769px) {
     display: none;
-  }
-`
-
-export const SocMedLink = styled(Link)`
-  transition: 0.2s;
-  padding: 0 0.25rem;
-  :visited {
-    color: #fff;
-  }
-  :hover {
-    color: #fa7d09;
   }
 `
 
