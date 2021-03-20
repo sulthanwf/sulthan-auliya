@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { menuData } from "../data/MenuData"
-import { FaBars } from "react-icons/fa"
+import { FaBars } from "@react-icons/all-files/fa/FaBars"
 import { Link } from "gatsby"
 
 const Header = () => {
