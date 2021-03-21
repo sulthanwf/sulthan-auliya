@@ -4,6 +4,8 @@ import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
 import { SocMedLink } from "./socialMediaLinks"
+import { menuData } from "../data/MenuData"
+import { NavLink } from "./header"
 
 const Footer = () => {
   return (
@@ -15,8 +17,11 @@ const Footer = () => {
           <FS1SThirdLine>© 2021</FS1SThirdLine>
         </FSection1>
         <FSection2>
-          <FS2FirstLine>About</FS2FirstLine>
-          <FS2SecondLine>Gallery</FS2SecondLine>
+          {menuData.slice(0, 2).map((item, index) => (
+            <NavLink to={item.link} key={index}>
+              {item.title}
+            </NavLink>
+          ))}
         </FSection2>
         <FSection3>
           <FS3FirstLine>
@@ -48,10 +53,10 @@ export const FooterContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 50vw;
-  height: 200px;
+  height: 150px;
   border-radius: 10px 10px 0 0;
   position: sticky;
-  margin: -200px 0 0 0;
+  margin: -150px 0 0 0;
   left: 25%;
   z-index: 10;
   color: white;
@@ -113,24 +118,34 @@ export const FSection2 = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
-  justify-content: center;
   place-items: center;
-  font-size: 1.5rem;
+  justify-content: space-evenly;
+
+  a {
+    height: unset;
+    @media screen and (max-width: 1440px) {
+      font-size: 1rem;
+    }
+  }
 `
-export const FS2FirstLine = styled.div``
-export const FS2SecondLine = styled.div``
 
 export const FSection3 = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   padding: 0 2rem;
-  font-size: 1.5rem;
   width: max-content;
 `
 export const FS3FirstLine = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: clamp(25px, 2.5vw, 50px);
-  padding: 0.5rem 0;
 `
-export const FS3SecondLine = styled.div``
+export const FS3SecondLine = styled.div`
+  display: flex;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+`
