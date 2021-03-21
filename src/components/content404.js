@@ -8,6 +8,7 @@ const Content404 = () => {
       <HomeLink to="/">
         <h1>404: Not Found</h1>
         <p>The page is under construction. Thank you for understanding</p>
+        <p>Click on here to go back</p>
       </HomeLink>
     </Container>
   )
