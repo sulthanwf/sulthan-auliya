@@ -28,7 +28,6 @@ const CornerLinks = () => {
 export default CornerLinks
 
 export const CornerLinksContainer = styled.div`
-  color: white;
   position: fixed;
   bottom: 0;
   z-index: 100;

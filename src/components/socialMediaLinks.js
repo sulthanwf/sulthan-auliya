@@ -4,6 +4,7 @@ import styled from "styled-components"
 export const SocMedLink = styled(Link)`
   transition: 0.2s;
   padding: 0 0.25rem;
+  color: #fff;
   :visited {
     color: #fff;
   }
