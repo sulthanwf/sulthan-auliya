@@ -34,7 +34,7 @@ const Contact = () => {
           <ContactTitle>
             <Title
               css={`
-                font-size: clamp(4.2rem, 9vw, 6rem);
+                font-size: clamp(4.2rem, 7vw, 6rem);
               `}
             >
               Get in Touch
@@ -45,11 +45,12 @@ const Contact = () => {
             <textarea name="message" placeholder="Send your message" />
           </ContactForm>
           <BtnBorder>
-            <Button to="/send">Send</Button>
+            <Button to="/send" type="submit">
+              Send
+            </Button>
           </BtnBorder>
         </ContactContent>
       </ContactContainer>
-      {/* <Footer /> */}
     </BackgroundImage>
   )
 }
@@ -94,7 +95,7 @@ export const ContactContainer = styled.div`
 
 export const ContactContent = styled.div`
   padding: 0 1rem;
-  width: 100%;
+  width: unset;
   z-index: 10;
 `
 
@@ -104,39 +105,48 @@ export const ContactTitle = styled.div`
   padding: 10px 0;
 `
 
-export const ContactForm = styled.div`
+export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
 
   input {
     margin: 10px 0;
-    height: 75px;
+    height: 7.5vh;
     border: none;
     border-radius: 10px 10px 0 0;
+    padding: 0 1rem;
+    font-size: 1.25rem;
+    font-family: "Montserrat", sans-serif;
     ::placeholder {
       font-size: 1.5rem;
+      font-family: "Titillium Web", sans-serif;
       font-weight: 500;
       color: black;
       position: relative;
-      left: 2rem;
-      top: 5px;
+    }
+
+    :focus {
+      outline: none;
     }
   }
 
   textarea {
     margin: 10px 0;
-    height: clamp(200px, 33vh, 350px);
+    height: 30vh;
     border: none;
     border-radius: 0 0 10px 10px;
     overflow: hidden;
     resize: none;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-family: "Montserrat", sans-serif;
     ::placeholder {
       font-size: 1.5rem;
       font-weight: 500;
+      font-family: "Titillium Web", sans-serif;
       color: black;
       position: relative;
-      left: 2rem;
-      top: 5px;
+      top: -5px;
     }
   }
 `
