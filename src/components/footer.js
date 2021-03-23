@@ -97,6 +97,7 @@ export const FooterContent = styled.div`
     position: sticky;
     margin: 0;
     height: max-content;
+    padding: 0.5rem 0;
   }
 `
 
@@ -161,6 +162,10 @@ export const FSection2 = styled.div`
       font-size: 1rem;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 0.5rem;
+  }
 `
 
 export const FSection3 = styled.div`
@@ -170,6 +175,10 @@ export const FSection3 = styled.div`
   justify-content: space-evenly;
   padding: 0 2rem;
   width: max-content;
+
+  @media screen and (max-width: 500px) {
+    padding: 0 0.5rem;
+  }
 `
 export const FS3FirstLine = styled.div`
   display: flex;
