@@ -36,7 +36,7 @@ export const CornerLinksContainer = styled.div`
   font-size: clamp(25px, 2.5vw, 50px);
   padding: 0 calc((100vw - 1300px) / 2);
 
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `

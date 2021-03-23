@@ -66,11 +66,16 @@ export const FooterContainer = styled.div`
     margin: -100px 0 0 0;
   }
 
-  @media screen and (max-width: 769px) {
+  @media screen and (max-width: 1024px) {
     width: 100vw;
     position: absolute;
     left: 0;
     border-radius: 0;
+  }
+
+  @media screen and (max-height: 500px) {
+    position: sticky;
+    margin: 0;
   }
 `
 
