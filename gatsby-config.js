@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Sulthan Auliya`,
-    description: `Sulthan Auliya's website.`,
-    author: `Sulthan Auliya`,
+    description: `Hi, my name is Sulthan Auliya and welome to my website. I am a software developer based in New Zealand.`,
+    author: `@sulthanwf`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

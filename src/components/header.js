@@ -31,18 +31,15 @@ export const Nav = styled.div`
   height: 10vh;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1720px) / 2);
+  padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
   position: fixed;
   top: 0;
   width: 100vw;
 
-  @media screen and (max-width: 1440px) {
-    padding: 0.5rem calc((100vw - 1300px) / 2);
-  }
-
   @media screen and (max-width: 500px) {
     width: 100%;
+    padding: 0;
   }
 `
 
