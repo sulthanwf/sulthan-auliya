@@ -1,10 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { Button } from "./button"
 import { Title } from "./title"
 import BackgroundImage from "gatsby-background-image"
-// import Footer from "./footer"
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -18,6 +17,17 @@ const Contact = () => {
       }
     }
   `)
+
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
+  const handleEmailChange = e => {
+    setEmail({ value: e.target.value })
+  }
+
+  const handleMessageChange = e => {
+    setMessage({ value: e.target.value })
+  }
 
   const contactBg = data.file.childImageSharp.fluid
 
@@ -35,8 +45,17 @@ const Contact = () => {
             <Title>Get in Touch</Title>
           </ContactTitle>
           <ContactForm>
-            <input type="email" name="email" placeholder="Your email" />
-            <textarea name="message" placeholder="Send your message" />
+            <input
+              type="email"
+              placeholder="Your email"
+              value={email.value}
+              onChange={handleEmailChange}
+            />
+            <textarea
+              placeholder="Send your message"
+              value={message.value}
+              onChange={handleMessageChange}
+            />
           </ContactForm>
           <BtnBorder>
             <Button to="/send" type="submit">
