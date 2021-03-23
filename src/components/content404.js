@@ -21,6 +21,7 @@ export const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: #fa7d09;
 `
 
 export const HomeLink = styled(Link)`
@@ -29,5 +30,5 @@ export const HomeLink = styled(Link)`
   text-decoration: none;
   outline: none;
   white-space: nowrap;
-  color: #000;
+  color: #fff;
 `
