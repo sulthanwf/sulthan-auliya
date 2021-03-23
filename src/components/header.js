@@ -38,7 +38,6 @@ export const Nav = styled.div`
   width: 100vw;
 
   @media screen and (max-width: 500px) {
-    width: 100%;
     padding: 0;
   }
 `

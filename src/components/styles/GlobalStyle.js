@@ -9,8 +9,22 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
  }
  body{
-   @media screen and (max-width: 500px){
-       width:fit-content;
-    }
+    overflow:overlay;
+   ::-webkit-scrollbar {
+      width: 5px;
+   }
+
+   ::-webkit-scrollbar-track {
+      background: none; 
+   }
+ 
+   ::-webkit-scrollbar-thumb {
+      background: #fa9639; 
+      border-radius: 10px;
+   }
+
+   ::-webkit-scrollbar-thumb:hover {
+      background: #fff; 
+   }
  }
 `

@@ -34,11 +34,7 @@ export const CornerLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   font-size: clamp(25px, 2.5vw, 50px);
-  padding: 0 calc((100vw - 1720px) / 2);
-
-  @media screen and (max-width: 1440px) {
-    padding: 0rem calc((100vw - 1300px) / 2);
-  }
+  padding: 0 calc((100vw - 1300px) / 2);
 
   @media screen and (max-width: 769px) {
     display: none;

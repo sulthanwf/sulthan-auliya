@@ -51,12 +51,18 @@ const Hero = () => {
       <HeroContainer>
         <HeroContent>
           <LeftTitle onMouseEnter={() => setHeroBg(codeBg)}>
-            <Title className={heroBg === codeBg ? "active" : "inactive"}>
+            <Title
+              className={heroBg === codeBg ? "active" : "inactive"}
+              hero="true"
+            >
               Software Developer
             </Title>
           </LeftTitle>
           <RightTitle onMouseEnter={() => setHeroBg(aucklandBg)}>
-            <Title className={heroBg === aucklandBg ? "active" : "inactive"}>
+            <Title
+              className={heroBg === aucklandBg ? "active" : "inactive"}
+              hero="true"
+            >
               Creator
             </Title>
           </RightTitle>
@@ -111,12 +117,8 @@ export const HeroContent = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1720px) / 2);
+  padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 10;
-
-  @media screen and (max-width: 1440px) {
-    padding: 0.5rem calc((100vw - 1300px) / 2);
-  }
 
   .inactive {
     -webkit-text-fill-color: transparent;
