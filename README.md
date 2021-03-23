@@ -1,3 +1,8 @@
+## Creator's Message
+ Hi, this is the source code to my website [sulthanauliya.com](https://www.sulthanauliya.com). I made this as a site project as well as to showcase my work, design, and what I create over the years. I use GatsbyJS as it is one of the popular stack to build a static web page these days.
+ 
+The following paragraphs/contents are the messages from the gatsby starter boilerplate. You can make your own gatsby static website by following the steps below.
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.sulthanauliya.com">
