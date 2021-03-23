@@ -125,6 +125,13 @@ export const HeroContent = styled.div`
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
   }
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-between;
+  }
 `
 
 export const LeftTitle = styled.div``

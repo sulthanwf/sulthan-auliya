@@ -77,20 +77,45 @@ export const FooterContainer = styled.div`
     position: sticky;
     margin: 0;
   }
+
+  @media screen and (max-width: 500px) {
+    position: sticky;
+    margin: 0;
+    height: max-content;
+  }
 `
 
 export const FooterContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "title links socialmedia";
   width: 100%;
+
+  @media screen and (max-width: 500px) {
+    grid-template-areas:
+      "socialmedia links"
+      "title title";
+    position: sticky;
+    margin: 0;
+    height: max-content;
+  }
 `
 
 export const FSection1 = styled.div`
+  grid-area: title;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
   width: max-content;
   place-content: center;
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: row;
+    place-self: center;
+    width: 90vw;
+    margin-top: 0.5rem;
+    border-top: 1px #fff solid;
+  }
 `
 export const FS1FirstLine = styled.div`
   font-size: 1rem;
@@ -98,6 +123,9 @@ export const FS1FirstLine = styled.div`
 
   @media screen and (max-width: 1440px) {
     font-size: 0.5rem;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 0 0.5rem 0 0;
   }
 `
 export const FS1SecondLine = styled.div`
@@ -120,6 +148,7 @@ export const FS1SThirdLine = styled.div`
 `
 
 export const FSection2 = styled.div`
+  grid-area: links;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
@@ -135,6 +164,7 @@ export const FSection2 = styled.div`
 `
 
 export const FSection3 = styled.div`
+  grid-area: socialmedia;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
