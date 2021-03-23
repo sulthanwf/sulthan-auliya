@@ -13,9 +13,7 @@ const About = () => {
         </AboutTitle>
         <ThirdLine>
           I am a graduate software developer based in New Zealand who likes to
-          <br></br>
           design and develop website/web-app. Programming & solving problem is
-          <br></br>
           my interest and photography is my hobby.
         </ThirdLine>
         <BtnBorder>
@@ -34,16 +32,19 @@ export const AboutContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0.5rem calc((100vw - 760px) / 2);
+  padding: 0 1rem;
   position: relative;
   color: #fff;
+`
+
+export const AboutContent = styled.div`
+  padding: 0.5rem calc((100vw - 1300px) / 2);
+  max-width: min-content;
 
   @media screen and (max-width: 769px) {
     padding: 0.5rem calc((100vw - 450px) / 2);
   }
 `
-
-export const AboutContent = styled.div``
 
 export const FirstLine = styled.p`
   font-size: clamp(1.25rem, 2vw, 2rem);
@@ -52,11 +53,13 @@ export const FirstLine = styled.p`
 
 export const AboutTitle = styled.div`
   padding: 10px 0;
+  width: max-content;
 `
 
 export const ThirdLine = styled.p`
   font-size: clamp(0.75rem, 1.5vw, 1.5rem);
   padding: 10px 0;
+  text-align: justify;
 `
 
 export const BtnBorder = styled.div`

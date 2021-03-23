@@ -36,10 +36,9 @@ const Gallery = () => {
           </GalleryTitle>
           <ThirdLine>
             I like to play with my camera lenses and capture my vision. Getting
-            my work out here / <br></br>
-            sharing my vision help me learn and reflect on my work, a way to
-            improve my skill. The <br></br>
-            best way to learn for me is "just do it" -Nike
+            my work out here / sharing my vision help me learn and reflect on my
+            work, a way to improve my skill. The best way to learn for me is
+            "just do it" -Nike
           </ThirdLine>
           <BtnBorder>
             <Button to="/gallery">Take a look at my Gallery</Button>
@@ -58,13 +57,9 @@ export const GalleryContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 0.5rem calc((100vw - 900px) / 2);
+  padding: 0 1rem;
   position: relative;
   color: #fff;
-
-  @media screen and (max-width: 769px) {
-    padding: 0.5rem calc((100vw - 450px) / 2);
-  }
 
   ::before {
     content: "";
@@ -84,7 +79,13 @@ export const GalleryContainer = styled.div`
 `
 
 export const GalleryContent = styled.div`
+  padding: 0.5rem calc((100vw - 1300px) / 2);
+  max-width: min-content;
   z-index: 10;
+
+  @media screen and (max-width: 769px) {
+    padding: 0.5rem calc((100vw - 450px) / 2);
+  }
 `
 
 export const FirstLine = styled.p`
@@ -94,11 +95,13 @@ export const FirstLine = styled.p`
 
 export const GalleryTitle = styled.div`
   padding: 10px 0;
+  width: max-content;
 `
 
 export const ThirdLine = styled.p`
   font-size: clamp(0.75rem, 1.5vw, 1.5rem);
   padding: 10px 0;
+  text-align: justify;
 `
 
 export const BtnBorder = styled.div`

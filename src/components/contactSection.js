@@ -32,13 +32,7 @@ const Contact = () => {
       <ContactContainer id="contact">
         <ContactContent>
           <ContactTitle>
-            <Title
-              css={`
-                font-size: clamp(4.2rem, 7vw, 6rem);
-              `}
-            >
-              Get in Touch
-            </Title>
+            <Title>Get in Touch</Title>
           </ContactTitle>
           <ContactForm>
             <input type="email" name="email" placeholder="Your email" />
