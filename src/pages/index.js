@@ -1,9 +1,9 @@
 import * as React from "react"
-import About from "../components/aboutSection"
-import Contact from "../components/contactSection"
+import About from "../components/home-sections/aboutSection"
+import Contact from "../components/home-sections/contactSection"
+import Gallery from "../components/home-sections/gallerySection"
+import Hero from "../components/home-sections/heroSection"
 import CornerLinks from "../components/cornerLinks"
-import Gallery from "../components/gallerySection"
-import Hero from "../components/heroSection"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
