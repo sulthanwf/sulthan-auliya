@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { Button } from "./button"
-import { Title } from "./title"
+import { Button } from "../Button"
+import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
 
 const Gallery = () => {

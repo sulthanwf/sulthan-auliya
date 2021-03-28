@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
-import { SocMedLink } from "./socialMediaLinks"
+import { SocMedLink } from "./SocialMediaLinks"
 import { menuData } from "../data/MenuData"
 import { NavLink } from "./header"
 
