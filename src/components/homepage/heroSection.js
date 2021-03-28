@@ -36,7 +36,7 @@ const Hero = () => {
       fluid={heroBg}
       css={`
         height: 100vh;
-        animation: BgAnimation 0.2s ease-in-out;
+        animation: BgAnimation 0.2s ease-out;
 
         @keyframes BgAnimation {
           from {
