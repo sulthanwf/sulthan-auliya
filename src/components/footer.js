@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
-import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
+import { CgUnsplash } from "@react-icons/all-files/cg/CgUnsplash"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
 import { SocMedLink } from "./CornerLinks"
 import { menuData } from "../data/MenuData"
@@ -31,13 +31,13 @@ const Footer = () => {
               to="https://www.linkedin.com/in/sulthanauliya"
               target="_blank"
             >
-              <FaGithub />
+              <FaLinkedinIn />
             </SocMedLink>
             <SocMedLink to="https://github.com/sulthanwf" target="_blank">
-              <FaInstagram />
+              <FaGithub />
             </SocMedLink>
-            <SocMedLink to="https://www.instagram.com/swafiee" target="_blank">
-              <FaLinkedinIn />
+            <SocMedLink to="https://unsplash.com/@swafie" target="_blank">
+              <CgUnsplash />
             </SocMedLink>
           </FS3FirstLine>
           <FS3SecondLine>sulthanwf@gmail.com</FS3SecondLine>

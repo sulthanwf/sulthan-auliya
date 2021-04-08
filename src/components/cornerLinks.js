@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
-import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
+import { CgUnsplash } from "@react-icons/all-files/cg/CgUnsplash"
 
 const CornerLinks = () => {
   return (
@@ -17,8 +17,8 @@ const CornerLinks = () => {
       <SocMedLink to="https://github.com/sulthanwf" target="_blank">
         <FaGithub />
       </SocMedLink>
-      <SocMedLink to="https://www.instagram.com/swafiee" target="_blank">
-        <FaInstagram />
+      <SocMedLink to="https://unsplash.com/@swafie" target="_blank">
+        <CgUnsplash />
       </SocMedLink>
       <VerticalLine />
     </CornerLinksContainer>
