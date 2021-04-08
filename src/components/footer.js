@@ -3,24 +3,26 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
-import { SocMedLink } from "./SocialMediaLinks"
+import { SocMedLink } from "./CornerLinks"
 import { menuData } from "../data/MenuData"
-import { NavLink } from "./header"
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
         <FSection1>
-          <FS1FirstLine>Designed & Developed by</FS1FirstLine>
-          <FS1SecondLine>Sulthan Auliya</FS1SecondLine>
-          <FS1SThirdLine>© 2021</FS1SThirdLine>
+          <div className="first-line">Designed & Developed by</div>
+          <FooterLink to="/">
+            <div className="second-line">Sulthan Auliya</div>
+          </FooterLink>
+          <div className="third-line">© 2021</div>
         </FSection1>
         <FSection2>
           {menuData.slice(0, 2).map((item, index) => (
-            <NavLink to={item.link} key={index}>
+            <FooterLink to={item.link} key={index}>
               {item.title}
-            </NavLink>
+            </FooterLink>
           ))}
         </FSection2>
         <FSection3>
@@ -101,6 +103,14 @@ export const FooterContent = styled.div`
   }
 `
 
+export const FooterLink = styled(Link)`
+  color: white;
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+`
+
 export const FSection1 = styled.div`
   grid-area: title;
   display: flex;
@@ -117,34 +127,37 @@ export const FSection1 = styled.div`
     margin-top: 0.5rem;
     border-top: 1px #fff solid;
   }
-`
-export const FS1FirstLine = styled.div`
-  font-size: 1rem;
-  font-weight: 500;
 
-  @media screen and (max-width: 1440px) {
-    font-size: 0.5rem;
-  }
-  @media screen and (max-width: 500px) {
-    padding: 0 0.5rem 0 0;
-  }
-`
-export const FS1SecondLine = styled.div`
-  font-size: 2rem;
-  font-weight: 500;
-
-  @media screen and (max-width: 1440px) {
+  .first-line {
     font-size: 1rem;
-  }
-`
-export const FS1SThirdLine = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1rem;
-  font-weight: 500;
+    font-weight: 500;
 
-  @media screen and (max-width: 1440px) {
-    font-size: 0.5rem;
+    @media screen and (max-width: 1440px) {
+      font-size: 0.5rem;
+    }
+    @media screen and (max-width: 500px) {
+      padding: 0 0.5rem 0 0;
+    }
+  }
+
+  .second-line {
+    font-size: 2rem;
+    font-weight: 500;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 1rem;
+    }
+  }
+
+  .third-line {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    font-weight: 500;
+
+    @media screen and (max-width: 1440px) {
+      font-size: 0.5rem;
+    }
   }
 `
 
