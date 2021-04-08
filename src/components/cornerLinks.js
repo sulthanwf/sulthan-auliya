@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
-import { SocMedLink } from "./SocialMediaLinks"
 
 const CornerLinks = () => {
   return (
@@ -45,4 +45,16 @@ export const VerticalLine = styled.div`
   width: 50%;
   height: 150px;
   border-right: 2px white solid;
+`
+
+export const SocMedLink = styled(Link)`
+  transition: 0.2s;
+  padding: 0 0.25rem;
+  color: #fff;
+  :visited {
+    color: #fff;
+  }
+  :hover {
+    color: #fa9639;
+  }
 `
