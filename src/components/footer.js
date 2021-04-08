@@ -5,24 +5,24 @@ import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
 import { SocMedLink } from "./CornerLinks"
 import { menuData } from "../data/MenuData"
-import { NavLink } from "./header"
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
     <FooterContainer>
       <FooterContent>
         <FSection1>
-          <div>Designed & Developed by</div>
-          <div>
-            <NavLink to="/">Sulthan Auliya</NavLink>
-          </div>
-          <div>© 2021</div>
+          <div className="first-line">Designed & Developed by</div>
+          <FooterLink to="/">
+            <div className="second-line">Sulthan Auliya</div>
+          </FooterLink>
+          <div className="third-line">© 2021</div>
         </FSection1>
         <FSection2>
           {menuData.slice(0, 2).map((item, index) => (
-            <NavLink to={item.link} key={index}>
+            <FooterLink to={item.link} key={index}>
               {item.title}
-            </NavLink>
+            </FooterLink>
           ))}
         </FSection2>
         <FSection3>
@@ -103,7 +103,13 @@ export const FooterContent = styled.div`
   }
 `
 
-export const FooterLink = styled(NavLink)``
+export const FooterLink = styled(Link)`
+  color: white;
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+`
 
 export const FSection1 = styled.div`
   grid-area: title;
@@ -122,7 +128,7 @@ export const FSection1 = styled.div`
     border-top: 1px #fff solid;
   }
 
-  :first-child {
+  .first-line {
     font-size: 1rem;
     font-weight: 500;
 
@@ -134,7 +140,7 @@ export const FSection1 = styled.div`
     }
   }
 
-  :nth-child(2) {
+  .second-line {
     font-size: 2rem;
     font-weight: 500;
 
@@ -143,7 +149,7 @@ export const FSection1 = styled.div`
     }
   }
 
-  :nth-child(3) {
+  .third-line {
     display: flex;
     justify-content: flex-end;
     font-size: 1rem;
