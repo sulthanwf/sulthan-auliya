@@ -164,7 +164,7 @@ export const FSection1 = styled.div`
 
 export const FSection2 = styled.div`
   grid-area: links;
-  display: grid;
+  display: flex;
   flex-direction: column;
   padding: 0 2rem;
   place-items: center;
