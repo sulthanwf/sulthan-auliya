@@ -1,17 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import About from "./aboutSection"
-import Contact from "./contactSection"
-import Gallery from "./gallerySection"
-import Hero from "./heroSection"
+import AboutSection from "./aboutSection"
+import ContactSection from "./contactSection"
+import GallerySection from "./gallerySection"
+import HeroSection from "./heroSection"
 
 const Home = () => {
   return (
     <HomeContainer>
-      <Hero />
-      <About />
-      <Gallery />
-      <Contact />
+      <HeroSection />
+      <AboutSection />
+      <GallerySection />
+      <ContactSection />
     </HomeContainer>
   )
 }

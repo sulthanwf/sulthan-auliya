@@ -5,7 +5,7 @@ import { Button } from "../Button"
 import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
 
-const Contact = () => {
+const ContactSection = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "contact-bg.jpg" }) {
@@ -68,7 +68,7 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactSection
 
 export const ContactContainer = styled.div`
   background: none;
