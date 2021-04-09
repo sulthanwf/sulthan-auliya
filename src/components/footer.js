@@ -90,12 +90,14 @@ export const FooterContainer = styled.div`
 export const FooterContent = styled.div`
   display: grid;
   grid-template-areas: "title links socialmedia";
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
 
   @media screen and (max-width: 500px) {
     grid-template-areas:
       "socialmedia links"
       "title title";
+    grid-template-columns: unset;
     position: sticky;
     margin: 0;
     height: max-content;
@@ -104,8 +106,7 @@ export const FooterContent = styled.div`
 `
 
 export const FooterLink = styled(Link)`
-  color: white;
-  display: flex;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   width: 100%;
@@ -168,9 +169,11 @@ export const FSection2 = styled.div`
   padding: 0 2rem;
   place-items: center;
   justify-content: space-evenly;
+  font-size: 1.5rem;
 
   a {
     height: unset;
+    text-align: center;
     @media screen and (max-width: 1440px) {
       font-size: 1rem;
     }
@@ -185,12 +188,14 @@ export const FSection3 = styled.div`
   grid-area: socialmedia;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  justify-self: flex-end;
   padding: 0 2rem;
-  width: max-content;
+  width: min-content;
 
   @media screen and (max-width: 500px) {
     padding: 0 0.5rem;
+    justify-self: center;
   }
 `
 export const FS3FirstLine = styled.div`
