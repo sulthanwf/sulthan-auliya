@@ -4,18 +4,19 @@ import { menuData } from "../data/MenuData"
 import { FaBars } from "@react-icons/all-files/fa/FaBars"
 import { Link } from "gatsby"
 
-const Header = () => {
+const Header = props => {
+  console.log(props.about.toString())
   return (
     <Nav>
-      <Bars />
+      <Bars black={props.about.toString()} />
 
-      <NavLink to="/">
+      <NavLink to="/" black={props.about.toString()}>
         <NavLogo>Sulthan Auliya</NavLogo>
       </NavLink>
 
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index}>
+          <NavLink to={item.link} key={index} black={props.about.toString()}>
             {item.title}
           </NavLink>
         ))}
@@ -44,7 +45,7 @@ export const Nav = styled.div`
 
 export const Bars = styled(FaBars)`
   display: none;
-  color: #fff;
+  color: ${({ black }) => (black ? "#000" : "#fff")};
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -58,7 +59,7 @@ export const Bars = styled(FaBars)`
 `
 
 export const NavLink = styled(Link)`
-  color: white;
+  color: ${({ black }) => (black ? "#000" : "#fff")};
   display: flex;
   align-items: center;
   text-decoration: none;

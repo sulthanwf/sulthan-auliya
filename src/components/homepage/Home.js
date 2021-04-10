@@ -4,6 +4,7 @@ import AboutSection from "./aboutSection"
 import ContactSection from "./contactSection"
 import GallerySection from "./gallerySection"
 import HeroSection from "./heroSection"
+import Footer from "../Footer"
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutSection />
       <GallerySection />
       <ContactSection />
+      <Footer />
     </HomeContainer>
   )
 }
