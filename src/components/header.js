@@ -5,18 +5,18 @@ import { FaBars } from "@react-icons/all-files/fa/FaBars"
 import { Link } from "gatsby"
 
 const Header = props => {
-  console.log(props.about.toString())
+  const [headerColor, setHeaderColor] = React.useState(props.about)
   return (
     <Nav>
-      <Bars black={props.about.toString()} />
+      <Bars black={headerColor} />
 
-      <NavLink to="/" black={props.about.toString()}>
+      <NavLink to="/" black={headerColor}>
         <NavLogo>Sulthan Auliya</NavLogo>
       </NavLink>
 
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index} black={props.about.toString()}>
+          <NavLink to={item.link} key={index} black={headerColor}>
             {item.title}
           </NavLink>
         ))}
