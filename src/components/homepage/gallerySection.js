@@ -5,7 +5,7 @@ import { Button } from "../Button"
 import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
 
-const Gallery = () => {
+const GallerySection = () => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "gallery-bg.jpg" }) {
@@ -49,7 +49,7 @@ const Gallery = () => {
   )
 }
 
-export default Gallery
+export default GallerySection
 
 export const GalleryContainer = styled.div`
   background: transparent;

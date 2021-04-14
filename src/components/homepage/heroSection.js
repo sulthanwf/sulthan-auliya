@@ -4,7 +4,7 @@ import { Title } from "../Title"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
-const Hero = () => {
+const HeroSection = () => {
   const data = useStaticQuery(graphql`
     query {
       Auckland: file(relativePath: { eq: "home1-bg.jpg" }) {
@@ -72,7 +72,7 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default HeroSection
 
 export const HeroContainer = styled.div`
   background: none;

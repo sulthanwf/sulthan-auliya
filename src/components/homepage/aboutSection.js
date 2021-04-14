@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Button } from "../Button"
 import { Title } from "../Title"
 
-const About = () => {
+const AboutSection = () => {
   return (
     <AboutContainer id="about">
       <AboutContent>
@@ -24,7 +24,7 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutSection
 
 export const AboutContainer = styled.div`
   background: #fa7d09;
