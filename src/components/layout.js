@@ -3,13 +3,14 @@ import Header from "./header"
 import { GlobalStyle } from "./Styles/GlobalStyle"
 
 const Layout = ({ children }) => {
-  const page = window.location.href
+  const [page, setPage] = React.useState(window.location.href)
   const aboutPage = page.match(/about.*/) ? true : false
+  const cvPage = page.match(/cv.*/) ? true : false
 
   return (
     <>
       <GlobalStyle />
-      <Header about={aboutPage} />
+      <Header about={aboutPage} cv={cvPage} />
       <main>{children}</main>
     </>
   )

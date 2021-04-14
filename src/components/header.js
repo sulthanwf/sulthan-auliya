@@ -6,8 +6,11 @@ import { Link } from "gatsby"
 
 const Header = props => {
   const [headerColor, setHeaderColor] = React.useState(props.about)
+  const [visible, setVisible] = React.useState(props.cv)
+
+  console.log(props.cv)
   return (
-    <Nav>
+    <Nav visible={visible}>
       <Bars black={headerColor} />
 
       <NavLink to="/" black={headerColor}>
@@ -30,7 +33,7 @@ export default Header
 export const Nav = styled.div`
   background: transparent;
   height: 10vh;
-  display: flex;
+  display: ${({ visible }) => (!visible ? "flex" : "none")};
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1300px) / 2);
   z-index: 100;
