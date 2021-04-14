@@ -3,7 +3,7 @@ import Header from "./header"
 import { GlobalStyle } from "./Styles/GlobalStyle"
 
 const Layout = ({ children }) => {
-  const [page, setPage] = React.useState(window.location.href)
+  const [page] = React.useState(window.location.href)
   const aboutPage = page.match(/about.*/) ? true : false
   const cvPage = page.match(/cv.*/) ? true : false
 

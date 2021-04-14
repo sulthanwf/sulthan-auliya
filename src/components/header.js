@@ -5,8 +5,8 @@ import { FaBars } from "@react-icons/all-files/fa/FaBars"
 import { Link } from "gatsby"
 
 const Header = props => {
-  const [headerColor, setHeaderColor] = React.useState(props.about)
-  const [visible, setVisible] = React.useState(props.cv)
+  const [headerColor] = React.useState(props.about)
+  const [visible] = React.useState(props.cv)
 
   console.log(props.cv)
   return (
