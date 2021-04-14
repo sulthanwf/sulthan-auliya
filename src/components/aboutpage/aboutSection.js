@@ -1,6 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import styled from "styled-components"
+import { Button } from "../Button"
 import { Title } from "../Title"
 
 const AboutSection = () => {
@@ -30,6 +31,14 @@ const AboutSection = () => {
               wander into different possibilities that allows for a complex
               outcome.
             </p>
+            <ButtonGroup>
+              <Button inverse="true" to="/gallery">
+                Take a Look on my Gallery
+              </Button>
+              <Button inverse="true" to="/cv">
+                Checkout my CV
+              </Button>
+            </ButtonGroup>
           </AboutParagraph>
         </AboutContent>
       </AboutContainer>
@@ -52,6 +61,7 @@ export const AboutContainer = styled.div`
 
 export const AboutContent = styled.div`
   display: flex;
+  margin-top: 2rem;
   padding: 0.5rem calc((100vw - 1300px) / 2);
 
   @media screen and (max-width: 769px) {
@@ -86,12 +96,25 @@ export const AboutParagraph = styled.div`
     font-size: 1.5rem;
     text-align: justify;
     padding-bottom: 2rem;
+    @media screen and (max-width: 1440px) {
+      padding-bottom: 1rem;
+    }
   }
 `
 
+export const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
 export const HorizontalLine = styled.div`
-  width: 250px;
+  width: clamp(150px, 14vw, 250px);
   border-top: 2px black solid;
   position: relative;
   left: 10%;
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
 `
