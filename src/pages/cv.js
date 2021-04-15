@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const CVPage = () => (
   <Layout>
-    <SEO title="CV Page" />
+    <SEO title="CV" />
     <CV />
   </Layout>
 )
