@@ -3,20 +3,22 @@ import styled from "styled-components"
 import { menuData } from "../data/MenuData"
 import { FaBars } from "@react-icons/all-files/fa/FaBars"
 import { Link } from "gatsby"
+import { useLocation } from "@reach/router"
 
-const Header = props => {
-  const [headerColor, setHeaderColor] = React.useState(props.about)
+const Header = () => {
+  const location = useLocation().pathname
+  const blackHeader = location.match("/about") ? true : false
   return (
     <Nav>
-      <Bars black={headerColor} />
+      <Bars black={blackHeader} />
 
-      <NavLink to="/" black={headerColor}>
+      <NavLink to="/" black={blackHeader}>
         <NavLogo>Sulthan Auliya</NavLogo>
       </NavLink>
 
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index} black={headerColor}>
+          <NavLink to={item.link} key={index} black={blackHeader}>
             {item.title}
           </NavLink>
         ))}

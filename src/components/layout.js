@@ -1,15 +1,16 @@
 import * as React from "react"
 import Header from "./header"
 import { GlobalStyle } from "./Styles/GlobalStyle"
+import { useLocation } from "@reach/router"
 
 const Layout = ({ children }) => {
-  const page = window.location.href
-  const aboutPage = page.match(/about.*/) ? true : false
+  let location = useLocation()
 
+  console.log(location.pathname)
   return (
     <>
       <GlobalStyle />
-      <Header about={aboutPage} />
+      <Header />
       <main>{children}</main>
     </>
   )
