@@ -57,6 +57,10 @@ export const AboutContainer = styled.div`
   padding: 0 1rem;
   position: relative;
   color: #fff;
+
+  @media screen and (max-width: 769px) {
+    height: unset;
+  }
 `
 
 export const AboutContent = styled.div`
@@ -67,6 +71,7 @@ export const AboutContent = styled.div`
   @media screen and (max-width: 769px) {
     padding: 0.5rem calc((100vw - 450px) / 2);
     flex-direction: column;
+    margin-top: 6rem;
   }
 `
 
@@ -74,6 +79,7 @@ export const AboutImage = styled.div`
   padding: 0 1rem;
   width: 600px;
   object-fit: contain;
+  align-self: center;
 
   @media screen and (max-width: 1440px) {
     width: 400px;
