@@ -2,21 +2,27 @@ import * as React from "react"
 import styled from "styled-components"
 import { menuData } from "../data/MenuData"
 import { FaBars } from "@react-icons/all-files/fa/FaBars"
+import { FaTimes } from "@react-icons/all-files/fa/FaTimes"
 import { Link } from "gatsby"
 import { useLocation } from "@reach/router"
 
 const Header = () => {
   const location = useLocation().pathname
   const blackHeader = location.match("/about") ? true : false
+  const [click, setClick] = React.useState(false)
+
+  const handleClick = () => setClick(!click)
+
   return (
     <Nav>
-      <Bars black={blackHeader} />
-
+      <MobileIcon onClick={handleClick}>
+        {click ? <Times /> : <Bars />}
+      </MobileIcon>
       <NavLink to="/" black={blackHeader}>
         <NavLogo>Sulthan Auliya</NavLogo>
       </NavLink>
 
-      <NavMenu>
+      <NavMenu onClick={handleClick} click={click}>
         {menuData.map((item, index) => (
           <NavLink to={item.link} key={index} black={blackHeader}>
             {item.title}
@@ -45,19 +51,26 @@ export const Nav = styled.div`
   }
 `
 
-export const Bars = styled(FaBars)`
+export const MobileIcon = styled.div`
   display: none;
-  color: ${({ black }) => (black ? "#000" : "#fff")};
 
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    transform: translate(-100%, 50%);
     font-size: 1.8rem;
     cursor: pointer;
   }
+`
+
+export const Bars = styled(FaBars)`
+  color: ${({ black }) => (black ? "#000" : "#fff")};
+`
+
+export const Times = styled(FaTimes)`
+  color: ${({ black }) => (black ? "#000" : "#fff")};
 `
 
 export const NavLink = styled(Link)`
@@ -81,6 +94,14 @@ export const NavMenu = styled.div`
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: ${({ click }) => (click ? "100%" : "-1000px")};
+    opacity: 1;
+    transition: all 0.2s ease;
+    background: #fa7d09;
   }
 `
