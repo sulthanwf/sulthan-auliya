@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
-import { db } from "../../functions/firestore"
+import firebase from "gatsby-plugin-firebase"
 import { ButtonB } from "../Button"
 
 const ContactSection = () => {
@@ -21,14 +21,18 @@ const ContactSection = () => {
 
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const timestamp = new Date()
 
   const handleSubmit = e => {
     e.preventDefault()
 
-    db.collection("Messages")
+    firebase
+      .firestore()
+      .collection("Messages")
       .add({
         email: email,
         message: message,
+        timestamp: timestamp,
       })
       .then(() => {
         alert("Message has been submitted")
