@@ -53,6 +53,7 @@ const ContactSection = () => {
     >
       <ContactContainer id="contact">
         <ContactContent onSubmit={handleSubmit}>
+          {/* <ContactContent> */}
           <ContactTitle>
             <Title>Get in Touch</Title>
           </ContactTitle>
