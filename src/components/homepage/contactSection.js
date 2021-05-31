@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import { Button } from "../Button"
 import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
 import { db } from "../../functions/firestore"
+import { ButtonB } from "../Button"
 
 const ContactSection = () => {
   const data = useStaticQuery(graphql`
@@ -27,7 +27,6 @@ const ContactSection = () => {
 
     db.collection("Messages")
       .add({
-        name: name,
         email: email,
         message: message,
       })
@@ -38,7 +37,6 @@ const ContactSection = () => {
         alert(error.message)
       })
 
-    setName("")
     setEmail("")
     setMessage("")
   }
@@ -72,7 +70,7 @@ const ContactSection = () => {
             />
           </ContactForm>
           <BtnBorder>
-            <Button type="submit">Send</Button>
+            <ButtonB type="submit">Send</ButtonB>
           </BtnBorder>
         </ContactContent>
       </ContactContainer>
