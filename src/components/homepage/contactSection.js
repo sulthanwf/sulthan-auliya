@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Button } from "../Button"
 import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
+import { db } from "../../functions/firestore"
 
 const ContactSection = () => {
   const data = useStaticQuery(graphql`
@@ -21,12 +22,25 @@ const ContactSection = () => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleEmailChange = e => {
-    setEmail({ value: e.target.value })
-  }
+  const handleSubmit = e => {
+    e.preventDefault()
 
-  const handleMessageChange = e => {
-    setMessage({ value: e.target.value })
+    db.collection("Messages")
+      .add({
+        name: name,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        alert("Message has been submitted")
+      })
+      .catch(error => {
+        alert(error.message)
+      })
+
+    setName("")
+    setEmail("")
+    setMessage("")
   }
 
   const contactBg = data.file.childImageSharp.fluid
@@ -40,7 +54,7 @@ const ContactSection = () => {
       `}
     >
       <ContactContainer id="contact">
-        <ContactContent>
+        <ContactContent onSubmit={handleSubmit}>
           <ContactTitle>
             <Title>Get in Touch</Title>
           </ContactTitle>
@@ -48,19 +62,17 @@ const ContactSection = () => {
             <input
               type="email"
               placeholder="Your email"
-              value={email.value}
-              onChange={handleEmailChange}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
             <textarea
               placeholder="Send your message"
-              value={message.value}
-              onChange={handleMessageChange}
+              value={message}
+              onChange={e => setMessage(e.target.value)}
             />
           </ContactForm>
           <BtnBorder>
-            <Button to="/send" type="submit">
-              Send
-            </Button>
+            <Button type="submit">Send</Button>
           </BtnBorder>
         </ContactContent>
       </ContactContainer>
@@ -106,7 +118,7 @@ export const ContactContainer = styled.div`
   }
 `
 
-export const ContactContent = styled.div`
+export const ContactContent = styled.form`
   padding: 0 1rem;
   width: unset;
   z-index: 10;
