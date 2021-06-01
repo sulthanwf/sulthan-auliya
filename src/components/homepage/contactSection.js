@@ -18,34 +18,71 @@ const ContactSection = () => {
       }
     }
   `)
+  const contactBg = data.file.childImageSharp.fluid
 
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const timestamp = new Date()
 
+  const [validEmail, setValidEmail] = useState([])
+  const [validMessage, setValidMessage] = useState("")
+
+  //Form Validation
+  const validateInput = () => {
+    let successCount = 0
+    let isInputsValid = false
+
+    if (email === "") {
+      setValidEmail(["invalid", "Please enter your email"])
+    } else if (!isEmail(email)) {
+      setValidEmail(["invalid", "Please enter a valid email"])
+    } else {
+      setValidEmail(["", ""])
+      successCount++
+    }
+
+    if (message === "") {
+      setValidMessage(["invalid", "Please enter your message"])
+    } else {
+      setValidMessage(["", ""])
+      successCount++
+    }
+
+    if (successCount === 2) {
+      isInputsValid = true
+    }
+    return isInputsValid
+  }
+
+  const isEmail = email => {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    )
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
 
-    firebase
-      .firestore()
-      .collection("Messages")
-      .add({
-        email: email,
-        message: message,
-        timestamp: timestamp,
-      })
-      .then(() => {
-        alert("Message has been submitted")
-      })
-      .catch(error => {
-        alert(error.message)
-      })
+    if (validateInput()) {
+      firebase
+        .firestore()
+        .collection("Messages")
+        .add({
+          email: email,
+          message: message,
+          timestamp: timestamp,
+        })
+        .then(() => {
+          alert("Message has been submitted 😃")
+        })
+        .catch(error => {
+          alert(error.message)
+        })
 
-    setEmail("")
-    setMessage("")
+      setEmail("")
+      setMessage("")
+    }
   }
-
-  const contactBg = data.file.childImageSharp.fluid
 
   return (
     <BackgroundImage
@@ -68,11 +105,17 @@ const ContactSection = () => {
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
+            <ValidationMsg className={validEmail[0]}>
+              {validEmail[1]}
+            </ValidationMsg>
             <textarea
               placeholder="Send your message"
               value={message}
               onChange={e => setMessage(e.target.value)}
             />
+            <ValidationMsg className={validMessage[0]}>
+              {validMessage[1]}
+            </ValidationMsg>
           </ContactForm>
           <BtnBorder>
             <ButtonB type="submit">Send</ButtonB>
@@ -176,6 +219,15 @@ export const ContactForm = styled.form`
       position: relative;
       top: -5px;
     }
+  }
+`
+
+export const ValidationMsg = styled.span`
+  display: none;
+  color: #cf0000;
+
+  &.invalid {
+    display: flex;
   }
 `
 
