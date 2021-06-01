@@ -18,34 +18,66 @@ const ContactSection = () => {
       }
     }
   `)
+  const contactBg = data.file.childImageSharp.fluid
 
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const timestamp = new Date()
 
+  //Form Validation
+  const validateInput = () => {
+    let successCount = 0
+    let isInputsValid = false
+
+    if (email === "") {
+      alert("Please enter your email")
+    } else if (!isEmail(email)) {
+      alert("Please enter a valid email")
+    } else {
+      successCount++
+    }
+
+    if (message === "") {
+      alert("Please let me know your message ")
+    } else {
+      successCount++
+    }
+
+    if (successCount === 2) {
+      isInputsValid = true
+    }
+    return isInputsValid
+  }
+
+  const isEmail = email => {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    )
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
 
-    firebase
-      .firestore()
-      .collection("Messages")
-      .add({
-        email: email,
-        message: message,
-        timestamp: timestamp,
-      })
-      .then(() => {
-        alert("Message has been submitted")
-      })
-      .catch(error => {
-        alert(error.message)
-      })
+    if (validateInput()) {
+      firebase
+        .firestore()
+        .collection("Messages")
+        .add({
+          email: email,
+          message: message,
+          timestamp: timestamp,
+        })
+        .then(() => {
+          alert("Message has been submitted 😃")
+        })
+        .catch(error => {
+          alert(error.message)
+        })
 
-    setEmail("")
-    setMessage("")
+      setEmail("")
+      setMessage("")
+    }
   }
-
-  const contactBg = data.file.childImageSharp.fluid
 
   return (
     <BackgroundImage
