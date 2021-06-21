@@ -60,7 +60,6 @@ export const FooterContainer = styled.div`
   position: sticky;
   margin: -150px 0 0 0;
   left: 25%;
-  z-index: 10;
   color: white;
 
   @media screen and (max-width: 1440px) {

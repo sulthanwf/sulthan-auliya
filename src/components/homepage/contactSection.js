@@ -5,6 +5,7 @@ import { Title } from "../Title"
 import BackgroundImage from "gatsby-background-image"
 import firebase from "gatsby-plugin-firebase"
 import { ButtonB } from "../Button"
+import MsgBox from "../msgBox"
 
 const ContactSection = () => {
   const data = useStaticQuery(graphql`
@@ -26,6 +27,11 @@ const ContactSection = () => {
 
   const [validEmail, setValidEmail] = useState([])
   const [validMessage, setValidMessage] = useState("")
+  const [msgBox, setMsgBox] = useState(true)
+
+  const toggleMsgBox = () => {
+    setMsgBox(!msgBox)
+  }
 
   //Form Validation
   const validateInput = () => {
@@ -55,9 +61,8 @@ const ContactSection = () => {
   }
 
   const isEmail = email => {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      email
-    )
+    const checkEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return checkEmail.test(email)
   }
 
   const handleSubmit = e => {
@@ -73,7 +78,7 @@ const ContactSection = () => {
           timestamp: timestamp,
         })
         .then(() => {
-          alert("Message has been submitted 😃")
+          toggleMsgBox()
         })
         .catch(error => {
           alert(error.message)
@@ -94,7 +99,6 @@ const ContactSection = () => {
     >
       <ContactContainer id="contact">
         <ContactContent onSubmit={handleSubmit}>
-          {/* <ContactContent> */}
           <ContactTitle>
             <Title>Get in Touch</Title>
           </ContactTitle>
@@ -121,6 +125,8 @@ const ContactSection = () => {
             <ButtonB type="submit">Send</ButtonB>
           </BtnBorder>
         </ContactContent>
+
+        {msgBox ? <MsgBox show={msgBox} toggle={toggleMsgBox} /> : null}
       </ContactContainer>
     </BackgroundImage>
   )
