@@ -70,11 +70,11 @@ const ContactSection = () => {
 
   return (
     <ContactContainer id="contact">
-      <ContactContent onSubmit={handleSubmit}>
+      <ContactContent>
         <ContactTitle>
           <Title>Get in Touch</Title>
         </ContactTitle>
-        <ContactForm>
+        <ContactForm onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Your email"
@@ -92,10 +92,11 @@ const ContactSection = () => {
           <ValidationMsg className={validMessage[0]}>
             {validMessage[1]}
           </ValidationMsg>
-        </ContactForm>
-        <BtnBorder>
+          <BtnBorder>
           <ButtonB type="submit">Send</ButtonB>
         </BtnBorder>
+        </ContactForm>
+
       </ContactContent>
     </ContactContainer>
   )
@@ -104,7 +105,7 @@ const ContactSection = () => {
 export default ContactSection
 
 export const ContactContainer = styled.div`
-  background: #fa7d09;
+  background: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,7 +124,7 @@ export const ContactContainer = styled.div`
   }
 `
 
-export const ContactContent = styled.form`
+export const ContactContent = styled.div`
   padding: 0 1rem;
   width: unset;
   z-index: 10;
@@ -162,7 +163,7 @@ export const ContactForm = styled.form`
 
   textarea {
     margin: 10px 0;
-    height: 25vh;
+    height: 30vh;
     border: none;
     border-radius: 0 0 10px 10px;
     overflow: hidden;
@@ -183,7 +184,8 @@ export const ContactForm = styled.form`
 
 export const ValidationMsg = styled.span`
   display: none;
-  color: #cf0000;
+  color: #ff6600;
+  margin: -0.5rem 0;
 
   &.invalid {
     display: flex;
