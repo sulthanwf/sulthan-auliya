@@ -28,15 +28,15 @@ const Footer = () => {
         <FSection3>
           <FS3FirstLine>
             <SocMedLink
-              to="https://www.linkedin.com/in/sulthanauliya"
+              href="https://www.linkedin.com/in/sulthanauliya"
               target="_blank"
             >
               <FaLinkedinIn />
             </SocMedLink>
-            <SocMedLink to="https://github.com/sulthanwf" target="_blank">
+            <SocMedLink href="https://github.com/sulthanwf" target="_blank">
               <FaGithub />
             </SocMedLink>
-            <SocMedLink to="https://unsplash.com/@swafie" target="_blank">
+            <SocMedLink href="https://unsplash.com/@swafie" target="_blank">
               <CgUnsplash />
             </SocMedLink>
           </FS3FirstLine>

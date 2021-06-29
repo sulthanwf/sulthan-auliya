@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn"
 import { CgUnsplash } from "@react-icons/all-files/cg/CgUnsplash"
@@ -9,15 +8,15 @@ const CornerLinks = () => {
   return (
     <CornerLinksContainer>
       <SocMedLink
-        to="https://www.linkedin.com/in/sulthanauliya"
+        href="https://www.linkedin.com/in/sulthanauliya"
         target="_blank"
       >
         <FaLinkedinIn />
       </SocMedLink>
-      <SocMedLink to="https://github.com/sulthanwf" target="_blank">
+      <SocMedLink href="https://github.com/sulthanwf" target="_blank">
         <FaGithub />
       </SocMedLink>
-      <SocMedLink to="https://unsplash.com/@swafie" target="_blank">
+      <SocMedLink href="https://unsplash.com/@swafie" target="_blank">
         <CgUnsplash />
       </SocMedLink>
       <VerticalLine />
@@ -47,7 +46,7 @@ export const VerticalLine = styled.div`
   border-right: 2px white solid;
 `
 
-export const SocMedLink = styled(Link)`
+export const SocMedLink = styled.a`
   transition: 0.2s;
   padding: 0 0.25rem;
   color: #fff;

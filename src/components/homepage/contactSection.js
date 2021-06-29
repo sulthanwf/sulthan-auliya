@@ -93,10 +93,9 @@ const ContactSection = () => {
             {validMessage[1]}
           </ValidationMsg>
           <BtnBorder>
-          <ButtonB type="submit">Send</ButtonB>
-        </BtnBorder>
+            <ButtonB type="submit">Send</ButtonB>
+          </BtnBorder>
         </ContactForm>
-
       </ContactContent>
     </ContactContainer>
   )
@@ -105,7 +104,7 @@ const ContactSection = () => {
 export default ContactSection
 
 export const ContactContainer = styled.div`
-  background: #000;
+  background: #7c08f9;
   display: flex;
   flex-direction: column;
   justify-content: center;

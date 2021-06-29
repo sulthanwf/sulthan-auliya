@@ -13,15 +13,15 @@ export const GlobalStyle = createGlobalStyle`
    overflow:overlay;
 
    ::-webkit-scrollbar {
-      width: 5px;
+      width: 4px;
    }
 
    ::-webkit-scrollbar-track {
-      background: none; 
+      background: transparent; 
    }
  
    ::-webkit-scrollbar-thumb {
-      background: #fa9639; 
+      background-color: #fa9639; 
       border-radius: 10px;
    }
 
