@@ -104,7 +104,7 @@ const ContactSection = () => {
 export default ContactSection
 
 export const ContactContainer = styled.div`
-  background: #7c08f9;
+  background: #ff6600;
   display: flex;
   flex-direction: column;
   justify-content: center;
