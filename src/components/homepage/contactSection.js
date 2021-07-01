@@ -183,7 +183,7 @@ export const ContactForm = styled.form`
 
 export const ValidationMsg = styled.span`
   display: none;
-  color: #ff6600;
+  color: #fff;
   margin: -0.5rem 0;
 
   &.invalid {
