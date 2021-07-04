@@ -57,7 +57,7 @@ const ContactSection = () => {
           timestamp: timestamp,
         })
         .then(() => {
-          alert("Your message has been sent")
+          window.location.replace(window.location.href + "thankyou")
         })
         .catch(error => {
           alert(error.message)
