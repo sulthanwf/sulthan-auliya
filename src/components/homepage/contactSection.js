@@ -106,13 +106,18 @@ export default ContactSection
 export const ContactContainer = styled.div`
   background: #ff6600;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0.5rem calc((100vw - 690px) / 2);
+  padding: 0 1rem;
   position: relative;
   color: #fff;
+`
+
+export const ContactContent = styled.div`
+  padding: 0.5rem calc((100vw - 690px) / 2);
+  width: unset;
+  z-index: 10;
 
   @media screen and (min-width: 1440px) {
     padding-bottom: 10rem;
@@ -121,12 +126,6 @@ export const ContactContainer = styled.div`
   @media screen and (min-width: 1024px) {
     padding-bottom: 5rem;
   }
-`
-
-export const ContactContent = styled.div`
-  padding: 0 1rem;
-  width: unset;
-  z-index: 10;
 `
 
 export const ContactTitle = styled.div`

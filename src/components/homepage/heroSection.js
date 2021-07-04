@@ -53,7 +53,7 @@ const HeroSection = () => {
           <LeftTitle onMouseEnter={() => setHeroBg(codeBg)}>
             <Title
               className={heroBg === codeBg ? "active" : "inactive"}
-              hero="true"
+              hero={true}
             >
               Software Developer
             </Title>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           <RightTitle onMouseEnter={() => setHeroBg(aucklandBg)}>
             <Title
               className={heroBg === aucklandBg ? "active" : "inactive"}
-              hero="true"
+              hero={true}
             >
               Creator
             </Title>
