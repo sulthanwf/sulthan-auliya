@@ -5,7 +5,8 @@ import { useLocation } from "@reach/router"
 
 const Layout = ({ children }) => {
   const location = useLocation().pathname
-  const hideHeader = location.match("/cv") ? true : false
+  const hideHeader =
+    location.match("/cv") || location.match("/thankyou") ? true : false
 
   return (
     <>
