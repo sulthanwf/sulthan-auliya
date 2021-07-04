@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Title } from "../Title"
 import firebase from "gatsby-plugin-firebase"
 import { ButtonB } from "../Button"
+import { navigate } from "gatsby"
 
 const ContactSection = () => {
   const [email, setEmail] = useState("")
@@ -57,7 +58,7 @@ const ContactSection = () => {
           timestamp: timestamp,
         })
         .then(() => {
-          window.location.replace(window.location.href + "thankyou")
+          navigate("/thankyou")
         })
         .catch(error => {
           alert(error.message)

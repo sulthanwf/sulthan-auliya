@@ -5,7 +5,7 @@ import ThankYou from "../components/thankyoupage/ThankYou"
 
 const ThankYouPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="thanks for your message" />
     <ThankYou />
   </Layout>
 )

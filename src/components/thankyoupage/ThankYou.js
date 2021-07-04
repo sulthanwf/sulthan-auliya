@@ -11,7 +11,8 @@ const ThankYou = () => {
           <Title>Thank You</Title>
           <ThankYouMessage>
             <NavLink to="/">
-              Thanks for your message! click here to go back home
+              Thanks for your message! click <span>&nbsp;here&nbsp;</span> to go
+              back home
             </NavLink>
           </ThankYouMessage>
         </ThankYouContent>
@@ -38,4 +39,8 @@ export const ThankYouContent = styled.div`
   text-align: center;
 `
 
-export const ThankYouMessage = styled.p``
+export const ThankYouMessage = styled.p`
+  span {
+    color: #0970d8;
+  }
+`
