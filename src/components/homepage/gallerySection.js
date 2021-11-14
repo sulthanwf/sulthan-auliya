@@ -41,7 +41,7 @@ const GallerySection = () => {
             "just do it" -Nike
           </ThirdLine>
           <BtnBorder>
-            <Button to="/gallery">Take a look at my Gallery</Button>
+            <Button to="https://unsplash.com/@swafie" target="_blank">Take a look at my Gallery</Button>
           </BtnBorder>
         </GalleryContent>
       </GalleryContainer>
